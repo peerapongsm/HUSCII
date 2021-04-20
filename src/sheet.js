@@ -132,8 +132,8 @@ export default class Sheet extends React.Component  {
         key: 'action',
         render: (text, record) => (
           <Space size="middle">
-            <a>Edit</a>
-            <a>Delete</a>
+            <a href="https://www.google.com/">Edit</a>
+            <a href="https://www.google.com/">Delete</a>
           </Space>
         ),
       },
