@@ -1,2 +1,2 @@
-Bob's awesome inventory \n
+Bob's awesome inventory
 A project by team HUSCII
