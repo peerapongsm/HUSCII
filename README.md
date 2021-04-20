@@ -1,2 +1,1 @@
-Bob's awesome inventory
-A project by team HUSCII
+Bob's awesome inventory, a project by team HUSCII
