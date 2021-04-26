@@ -1,5 +1,4 @@
 import React from 'react';
-import Tabletop from 'tabletop';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
@@ -15,12 +14,15 @@ export default class Sheet extends React.Component  {
   }
 
   componentDidMount() {
-    Tabletop.init({
-      key: "1BNRBr8FX6VrNXGjJ3jmV3X-Sr_jiGPPhiDgpHN2nQL4",
-      simpleSheet: true
+    this.updateSheet();
+  }
+
+  updateSheet = () => {
+    fetch("http://localhost:3001/", {
+      header:  {'Access-Control-Allow-Origin':'*'}
     })
-      .then((data) => this.setState({sheet: data}))
-      .catch((err) => console.warn(err));
+      .then(response => response.json())
+      .then(data => this.setState({sheet: data}));
   }
 
   getColumnSearchProps = dataIndex => ({
@@ -101,8 +103,31 @@ export default class Sheet extends React.Component  {
     this.setState({ searchText: '' });
   };
 
+  handleDelete = (id) => {
+    var raw = JSON.stringify({
+      "productID": id,
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:3001/delete", requestOptions)
+      .then(this.updateSheet)
+      .catch(error => console.log('error', error));
+  }
+
   render() {
     const columns = [
+      {
+        title: 'ProductID',
+        dataIndex: 'ProductID',
+        key: 'ProductID',
+        width: '20%',
+      },
       {
         title: 'product_name',
         dataIndex: 'product_name',
@@ -132,8 +157,7 @@ export default class Sheet extends React.Component  {
         key: 'action',
         render: (text, record) => (
           <Space size="middle">
-            <a href="https://www.google.com/">Edit</a>
-            <a href="https://www.google.com/">Delete</a>
+            <Button type="danger" onClick={() => this.handleDelete(record.ProductID)}>Delete</Button>
           </Space>
         ),
       },
