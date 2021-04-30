@@ -28,7 +28,7 @@ class App extends React.Component  {
   render() {
     var sheets = [];
     for (let i = 0; i < this.state.size; i++) {
-      var dir = "/sheet" + i
+      var dir = "/HUSCII/sheet" + i
       sheets.push(
         <Route exact path={dir}>
           <Sheet index={i}/>
@@ -41,13 +41,13 @@ class App extends React.Component  {
           <div className="logo" />
           <Menu theme="dark" mode="horizontal">
             <Menu.Item>
-              <a href="/">Bob's awesome inventory</a>
+              <a href="/HUSCII">Bob's awesome inventory</a>
             </Menu.Item>
             <Menu.Item>
-              <a href="/sheet0">All Parts</a>
+              <a href="/HUSCII/sheet0">All Parts</a>
             </Menu.Item>
             <Menu.Item>
-              <a href="/">All Kits</a>
+              <a href="/HUSCII">All Kits</a>
             </Menu.Item>
           </Menu>
         </Header>
