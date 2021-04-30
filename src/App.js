@@ -43,6 +43,12 @@ class App extends React.Component  {
             <Menu.Item>
               <a href="/">Bob's awesome inventory</a>
             </Menu.Item>
+            <Menu.Item>
+              <a href="/sheet0">All Parts</a>
+            </Menu.Item>
+            <Menu.Item>
+              <a href="/">All Kits</a>
+            </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ marginTop: '5vh', height:'80vh',padding: '0 50px' }}>
