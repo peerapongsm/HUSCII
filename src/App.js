@@ -50,6 +50,9 @@ class App extends React.Component  {
             <Route exact path="/">
               <MenuSheet/>
             </Route>
+            <Route exact path="/HUSCII">
+              <MenuSheet/>
+            </Route>
           {sheets}
           </Switch>
         </Content>
