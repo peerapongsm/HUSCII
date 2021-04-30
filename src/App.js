@@ -6,6 +6,7 @@ import './App.css';
 const { Header, Content, Footer } = Layout;
 
 class App extends React.Component  {
+
   render() {
     return (
       <Layout className="layout">
@@ -15,7 +16,7 @@ class App extends React.Component  {
             <Menu.Item key="1">Bob's awesome inventory</Menu.Item>
           </Menu>
         </Header>
-        <Content style={{ marginTop: '5vh', height:'100vh',padding: '0 50px' }}>
+        <Content style={{ marginTop: '5vh', height:'80vh',padding: '0 50px' }}>
           <Sheet/>
         </Content>
         <Footer style={{ textAlign: 'center' }}>Bob's inventory ©2021 Created by HUSCII</Footer>

@@ -102,40 +102,31 @@ export default class Sheet extends React.Component  {
   };
 
   render() {
+    console.log(this.state.sheet)
     const columns = [
       {
-        title: 'product_name',
+        title: 'Product Name',
         dataIndex: 'product_name',
         key: 'product_name',
         width: '20%',
         ...this.getColumnSearchProps('product_name'),
       },
       {
-        title: 'stock',
+        title: 'Stock',
         dataIndex: 'stock',
         key: 'stock',
         sorter: (a, b) => a.stock - b.stock,
       },
       {
-        title: 'description',
+        title: 'Description',
         dataIndex: 'description',
         key: 'description',
         ...this.getColumnSearchProps('description'),
       },
       {
-        title: 'img',
+        title: 'Image',
         dataIndex: 'img',
         key: 'img',
-      },
-      {
-        title: 'Action',
-        key: 'action',
-        render: (text, record) => (
-          <Space size="middle">
-            <a href="https://www.google.com/">Edit</a>
-            <a href="https://www.google.com/">Delete</a>
-          </Space>
-        ),
       },
     ];
     return <Table columns={columns} dataSource={this.state.sheet} />;
