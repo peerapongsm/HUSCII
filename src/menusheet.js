@@ -5,7 +5,7 @@ import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
 import './App.css';
 
-export default class Sheet extends React.Component  {
+export default class MenuSheet extends React.Component  {
 
   constructor(props) {
     super(props);
@@ -18,7 +18,7 @@ export default class Sheet extends React.Component  {
     Tabletop.init({
       key: "https://docs.google.com/spreadsheets/d/1BNRBr8FX6VrNXGjJ3jmV3X-Sr_jiGPPhiDgpHN2nQL4/gid=0"
     })
-      .then((data) => this.setState({sheet: data[this.props.index].elements}))
+      .then((data) => this.setState({sheet: data.directory.elements}))
       .catch((err) => console.warn(err));
   }
 
@@ -103,15 +103,10 @@ export default class Sheet extends React.Component  {
   render() {
     const columns = [
       {
-        title: 'Product Name',
-        dataIndex: 'product_name',
+        title: 'Kit name',
+        dataIndex: 'Kit_name',
         width: '20%',
-        ...this.getColumnSearchProps('product_name'),
-      },
-      {
-        title: 'Stock',
-        dataIndex: 'stock',
-        sorter: (a, b) => a.stock - b.stock,
+        ...this.getColumnSearchProps('Kit_name'),
       },
       {
         title: 'Description',
@@ -119,10 +114,16 @@ export default class Sheet extends React.Component  {
         ...this.getColumnSearchProps('description'),
       },
       {
-        title: 'Image',
-        dataIndex: 'img',
+        title: 'Content',
+        dataIndex: 'content',
       },
     ];
-    return <Table columns={columns} dataSource={this.state.sheet} />;
+    return <Table columns={columns} dataSource={this.state.sheet}
+    onRow={(record, rowIndex) => {
+      return {
+        onClick: event => {window.location.href = "/sheet" + rowIndex}
+      };
+    }}
+    />;
   }
 }
