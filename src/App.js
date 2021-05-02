@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Menu} from 'antd';
 import Tabletop from 'tabletop';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import Sheet from './sheet';
 import MenuSheet from './menusheet';
 import './App.css';
@@ -28,9 +28,9 @@ class App extends React.Component  {
   render() {
     var sheets = [];
     for (let i = 0; i < this.state.size; i++) {
-      var dir = "/HUSCII/sheet" + i
+      var dir = "/sheet-" + i;
       sheets.push(
-        <Route exact path={dir}>
+        <Route path={dir}>
           <Sheet index={i}/>
         </Route>
       );
@@ -41,13 +41,13 @@ class App extends React.Component  {
           <div className="logo" />
           <Menu theme="dark" mode="horizontal">
             <Menu.Item>
-              <a href="/HUSCII">Bob's awesome inventory</a>
+              <Link to="/">Bob's awesome inventory</Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="/HUSCII/sheet0">All Parts</a>
+              <Link to="/sheet-0">All Parts</Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="/HUSCII">All Kits</a>
+              <Link to="/">All Kits</Link>
             </Menu.Item>
           </Menu>
         </Header>
@@ -56,10 +56,7 @@ class App extends React.Component  {
             <Route exact path="/">
               <MenuSheet/>
             </Route>
-            <Route exact path="/HUSCII">
-              <MenuSheet/>
-            </Route>
-          {sheets}
+            {sheets}
           </Switch>
         </Content>
         <Footer style={{ textAlign: 'center' }}>Bob's inventory ©2021 Created by HUSCII</Footer>
