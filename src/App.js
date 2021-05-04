@@ -42,13 +42,13 @@ class App extends React.Component  {
           <div className="logo" />
           <Menu theme="dark" mode="horizontal">
             <Menu.Item>
-              <Link to="/">Bob's awesome inventory</Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Link to="/sheet-0">All Parts</Link>
+              Bob's awesome inventory
             </Menu.Item>
             <Menu.Item>
               <Link to="/dir">All Kits</Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to="/sheet-0">All Parts</Link>
             </Menu.Item>
           </Menu>
         </Header>

@@ -112,7 +112,7 @@ export default class MenuSheet extends React.Component  {
     return <Table columns={columns} dataSource={this.state.sheet}
     onRow={(record, rowIndex) => {
       return {
-        onClick: event => {window.location.href = "#/sheet-" + rowIndex}
+        onClick: event => {window.location.href = "#/sheet-" + (rowIndex+1)}
       };
     }}
     />;
