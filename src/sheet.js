@@ -1,5 +1,4 @@
 import React from 'react';
-import Tabletop from 'tabletop';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
@@ -10,16 +9,8 @@ export default class Sheet extends React.Component  {
   constructor(props) {
     super(props);
     this.state  = {
-      sheet: []
+      sheet: this.props.data.elements
     }
-  }
-
-  componentDidMount() {
-    Tabletop.init({
-      key: "https://docs.google.com/spreadsheets/d/1BNRBr8FX6VrNXGjJ3jmV3X-Sr_jiGPPhiDgpHN2nQL4/gid=0"
-    })
-      .then((data) => this.setState({sheet: data[this.props.index].elements}))
-      .catch((err) => console.warn(err));
   }
 
   getColumnSearchProps = dataIndex => ({

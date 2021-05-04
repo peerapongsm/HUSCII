@@ -13,7 +13,8 @@ class App extends React.Component  {
   constructor(props) {
     super(props);
     this.state  = {
-      size: 0
+      size: 0,
+      sheets: Object
     }
   }
 
@@ -21,7 +22,7 @@ class App extends React.Component  {
     Tabletop.init({
       key: "https://docs.google.com/spreadsheets/d/1BNRBr8FX6VrNXGjJ3jmV3X-Sr_jiGPPhiDgpHN2nQL4/gid=0"
     })
-      .then((data) => this.setState({size: Object.keys(data).length}))
+      .then((data) => this.setState({size: Object.keys(data).length, sheets: data}))
       .catch((err) => console.warn(err));
   }
 
@@ -31,7 +32,7 @@ class App extends React.Component  {
       var dir = "/sheet-" + i;
       sheets.push(
         <Route path={dir}>
-          <Sheet index={i}/>
+          <Sheet data={this.state.sheets[i]}/>
         </Route>
       );
     }
@@ -47,19 +48,27 @@ class App extends React.Component  {
               <Link to="/sheet-0">All Parts</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/">All Kits</Link>
+              <Link to="/dir">All Kits</Link>
             </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ marginTop: '5vh', height:'80vh',padding: '0 50px' }}>
           <Switch>
             <Route exact path="/">
-              <MenuSheet/>
+                  <>
+                    <div style={{textAlign: 'center', marginTop: '30vh', fontSize: '28pt'}}>
+                      <h1>Welcome to Bob's awesome Inventory!!</h1>
+                      <p>Choose <a href="#/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
+                    </div>
+                  </>
+            </Route>
+            <Route exact path="/dir">
+              <MenuSheet data={this.state.sheets.directory}/>
             </Route>
             {sheets}
           </Switch>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Bob's inventory ©2021 Created by HUSCII</Footer>
+        <Footer style={{ textAlign: 'center' }}>Bob's awesome inventory ©2021 Created by HUSCII</Footer>
       </Layout>
     );
   }
