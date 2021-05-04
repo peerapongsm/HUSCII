@@ -52,11 +52,11 @@ class App extends React.Component  {
             </Menu.Item>
           </Menu>
         </Header>
-        <Content style={{ marginTop: '5vh', height:'80vh',padding: '0 50px' }}>
+        <Content style={{ marginTop: '5vh', height:'auto',padding: '0 50px' }}>
           <Switch>
             <Route exact path="/">
                   <>
-                    <div style={{textAlign: 'center', marginTop: '30vh', fontSize: '28pt'}}>
+                    <div style={{textAlign: 'center', marginTop: '30vh', marginBottom: '25vh', fontSize: '28pt'}}>
                       <h1>Welcome to Bob's awesome Inventory!!</h1>
                       <p>Choose <a href="#/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
                     </div>
