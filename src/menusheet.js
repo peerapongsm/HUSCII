@@ -118,7 +118,3 @@ export default class MenuSheet extends React.Component  {
     />;
   }
 }
-
-MenuSheet.defaultProps = {
-  sheet: []
-};
