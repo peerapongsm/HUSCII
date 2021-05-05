@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/HUSCII/static/css/main.39c23d95.chunk.css",
+    "main.css": "/HUSCII/static/css/main.51e4ba27.chunk.css",
     "main.js": "/HUSCII/static/js/main.cc3e9338.chunk.js",
     "main.js.map": "/HUSCII/static/js/main.cc3e9338.chunk.js.map",
     "runtime-main.js": "/HUSCII/static/js/runtime-main.4d8a3412.js",
@@ -12,14 +12,14 @@
     "static/js/3.24ecad52.chunk.js.map": "/HUSCII/static/js/3.24ecad52.chunk.js.map",
     "index.html": "/HUSCII/index.html",
     "static/css/2.c51d807b.chunk.css.map": "/HUSCII/static/css/2.c51d807b.chunk.css.map",
-    "static/css/main.39c23d95.chunk.css.map": "/HUSCII/static/css/main.39c23d95.chunk.css.map",
+    "static/css/main.51e4ba27.chunk.css.map": "/HUSCII/static/css/main.51e4ba27.chunk.css.map",
     "static/js/2.b261e096.chunk.js.LICENSE.txt": "/HUSCII/static/js/2.b261e096.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4d8a3412.js",
     "static/css/2.c51d807b.chunk.css",
     "static/js/2.b261e096.chunk.js",
-    "static/css/main.39c23d95.chunk.css",
+    "static/css/main.51e4ba27.chunk.css",
     "static/js/main.cc3e9338.chunk.js"
   ]
 }
