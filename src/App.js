@@ -38,17 +38,17 @@ class App extends React.Component  {
     }
     return (
       <Layout className="layout">
-        <Header>
+        <Header style={{backgroundColor: '#5E22A9'}}>
           <div className="logo" />
-          <Menu theme="dark" mode="horizontal">
-            <Menu.Item>
+          <Menu theme="dark" mode="horizontal" style={{backgroundColor: '#5E22A9'}}>
+            <Menu.Item style={{color: 'gold'}}>
               Bob's awesome inventory
             </Menu.Item>
             <Menu.Item>
-              <Link to="/dir">All Kits</Link>
+              <Link to="/dir" style={{color: 'gold'}}>All Kits</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/sheet-0">All Parts</Link>
+              <Link to="/sheet-0" style={{color: 'gold'}}>All Parts</Link>
             </Menu.Item>
           </Menu>
         </Header>
@@ -68,7 +68,7 @@ class App extends React.Component  {
             {sheets}
           </Switch>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Bob's awesome inventory ©2021 Created by HUSCII</Footer>
+        <Footer style={{ textAlign: 'center', color: 'white', backgroundColor: '#CBC3E3'}}>Bob's awesome inventory ©2021 Created by HUSCII</Footer>
       </Layout>
     );
   }
