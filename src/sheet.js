@@ -94,10 +94,21 @@ export default class Sheet extends React.Component  {
   render() {
     const columns = [
       {
-        title: 'Product Name',
-        dataIndex: 'product_name',
+        title: 'Part Name',
+        dataIndex: 'part_name',
         width: '20%',
-        ...this.getColumnSearchProps('product_name'),
+        ...this.getColumnSearchProps('part_name'),
+      },
+      {
+        title: 'Kit Name',
+        dataIndex: 'kit_name',
+        width: '20%',
+        ...this.getColumnSearchProps('kit_name'),
+      },
+      {
+        title: 'Available',
+        dataIndex: 'available',
+        sorter: (a, b) => a.stock - b.stock,
       },
       {
         title: 'Stock',
