@@ -29,12 +29,9 @@ class App extends React.Component  {
   render() {
     return (
       <Layout className="layout">
-        <Header style={{backgroundColor: '#5E22A9'}}>
-          <div className="logo"/>
+        <Header style={{backgroundColor: '#5E22A9', display: 'flex'}}>
+          <h1 style={{color: 'gold', marginRight: '1vw'}}>ECE Inventory</h1>
           <Menu theme="dark" mode="horizontal" style={{backgroundColor: '#5E22A9'}}>
-            <Menu.Item>
-              <a href="#/" style={{color: 'gold'}}>ECE Inventory</a>
-            </Menu.Item>
             <Menu.Item>
               <a href="#/dir" style={{color: 'gold'}}>All Kits</a>
             </Menu.Item>
@@ -48,7 +45,7 @@ class App extends React.Component  {
             <Route exact path="/">
                   <>
                     <div style={{textAlign: 'center', marginTop: '20vh', marginBottom: '40vh', fontSize: '28pt'}}>
-                      <h1>Welcome to Bob's awesome Inventory!!</h1>
+                      <h1 style={{fontSize: '34pt'}}>Welcome to Electrical and Computer Engineering (ECE) Inventory!!</h1>
                       <p>Choose <a href="#/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
                     </div>
                   </>
@@ -61,7 +58,7 @@ class App extends React.Component  {
             </Route>
           </Switch>
         </Content>
-        <Footer style={{ textAlign: 'center', color: 'white', backgroundColor: '#CBC3E3'}}>Bob's awesome inventory ©2021 Created by HUSCII</Footer>
+        <Footer style={{ textAlign: 'center', color: 'white', backgroundColor: '#CBC3E3'}}>ECE inventory ©2021 Created by HUSCII</Footer>
       </Layout>
     );
   }
