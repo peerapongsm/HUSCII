@@ -2,9 +2,10 @@ import React from 'react';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
+import {withRouter} from 'react-router-dom';
 import './App.css';
 
-export default class Sheet extends React.Component  {
+class Sheet extends React.Component  {
 
   constructor(props) {
     super(props);
@@ -125,6 +126,8 @@ export default class Sheet extends React.Component  {
         dataIndex: 'img',
       },
     ];
-    return <Table columns={columns} dataSource={this.state.sheet} />;
+    return <Table columns={columns} dataSource={this.state.sheet}/>
   }
 }
+
+export default withRouter(Sheet);

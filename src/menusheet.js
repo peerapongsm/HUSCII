@@ -2,9 +2,10 @@ import React from 'react';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
+import {withRouter} from 'react-router-dom';
 import './App.css';
 
-export default class MenuSheet extends React.Component  {
+class MenuSheet extends React.Component  {
 
   constructor(props) {
     super(props);
@@ -118,3 +119,5 @@ export default class MenuSheet extends React.Component  {
     />;
   }
 }
+
+export default withRouter(MenuSheet);

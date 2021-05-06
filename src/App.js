@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Menu} from 'antd';
 import Tabletop from 'tabletop';
-import {Route, Switch, Link} from 'react-router-dom';
+import {Route, Switch, Link, withRouter} from 'react-router-dom';
 import Sheet from './sheet';
 import MenuSheet from './menusheet';
 import './App.css';
@@ -54,6 +54,10 @@ class App extends React.Component  {
         </Header>
         <Content style={{ marginTop: '5vh', height:'auto',padding: '0 50px' }}>
           <Switch>
+            {sheets}
+            <Route path="/dir">
+              <MenuSheet data={this.state.sheets.directory}/>
+            </Route>
             <Route exact path="/">
                   <>
                     <div style={{textAlign: 'center', marginTop: '30vh', marginBottom: '25vh', fontSize: '28pt'}}>
@@ -62,10 +66,6 @@ class App extends React.Component  {
                     </div>
                   </>
             </Route>
-            <Route exact path="/dir">
-              <MenuSheet data={this.state.sheets.directory}/>
-            </Route>
-            {sheets}
           </Switch>
         </Content>
         <Footer style={{ textAlign: 'center', color: 'white', backgroundColor: '#CBC3E3'}}>Bob's awesome inventory ©2021 Created by HUSCII</Footer>
@@ -74,4 +74,4 @@ class App extends React.Component  {
   }
 }
 
-export default App;
+export default withRouter(App);
