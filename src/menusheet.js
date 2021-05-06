@@ -2,10 +2,9 @@ import React from 'react';
 import { Table, Input, Button, Space } from 'antd';
 import Highlighter from 'react-highlight-words';
 import { SearchOutlined } from '@ant-design/icons';
-import {withRouter} from 'react-router-dom';
 import './App.css';
 
-class MenuSheet extends React.Component  {
+export default class MenuSheet extends React.Component  {
 
   constructor(props) {
     super(props);
@@ -110,7 +109,7 @@ class MenuSheet extends React.Component  {
         dataIndex: 'content',
       },
     ];
-    return <Table columns={columns} dataSource={this.state.sheet}
+    return <Table columns={columns} dataSource={this.state.sheet} rowKey={record => record.Kit_name}
     onRow={(record, rowIndex) => {
       return {
         onClick: event => {window.location.href = "#/sheet-" + (rowIndex+1)}
@@ -119,5 +118,3 @@ class MenuSheet extends React.Component  {
     />;
   }
 }
-
-export default withRouter(MenuSheet);

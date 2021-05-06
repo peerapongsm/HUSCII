@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Menu} from 'antd';
 import Tabletop from 'tabletop';
-import {Route, Switch, Link, withRouter} from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
 import Sheet from './sheet';
 import MenuSheet from './menusheet';
 import './App.css';
@@ -27,44 +27,37 @@ class App extends React.Component  {
   }
 
   render() {
-    var sheets = [];
-    for (let i = 0; i < this.state.size; i++) {
-      var dir = "/sheet-" + i;
-      sheets.push(
-        <Route path={dir}>
-          <Sheet data={this.state.sheets[i]}/>
-        </Route>
-      );
-    }
     return (
       <Layout className="layout">
         <Header style={{backgroundColor: '#5E22A9'}}>
-          <div className="logo" />
+          <div className="logo"/>
           <Menu theme="dark" mode="horizontal" style={{backgroundColor: '#5E22A9'}}>
-            <Menu.Item style={{color: 'gold'}}>
-              Bob's awesome inventory
+            <Menu.Item>
+              <a href="#/" style={{color: 'gold'}}>ECE Inventory</a>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/dir" style={{color: 'gold'}}>All Kits</Link>
+              <a href="#/dir" style={{color: 'gold'}}>All Kits</a>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/sheet-0" style={{color: 'gold'}}>All Parts</Link>
+              <a href="#/sheet-0" style={{color: 'gold'}}>All Parts</a>
             </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ marginTop: '5vh', height:'auto',padding: '0 50px' }}>
           <Switch>
-            {sheets}
-            <Route path="/dir">
-              <MenuSheet data={this.state.sheets.directory}/>
-            </Route>
             <Route exact path="/">
                   <>
-                    <div style={{textAlign: 'center', marginTop: '30vh', marginBottom: '25vh', fontSize: '28pt'}}>
+                    <div style={{textAlign: 'center', marginTop: '20vh', marginBottom: '40vh', fontSize: '28pt'}}>
                       <h1>Welcome to Bob's awesome Inventory!!</h1>
                       <p>Choose <a href="#/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
                     </div>
                   </>
+            </Route>
+            <Route path="/dir">
+              <MenuSheet data={this.state.sheets.directory}/>
+            </Route>
+            <Route path="/:sheet">
+              <Sheet data={this.state.sheets} key={window.location.hash}/>
             </Route>
           </Switch>
         </Content>

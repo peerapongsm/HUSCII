@@ -9,9 +9,17 @@ class Sheet extends React.Component  {
 
   constructor(props) {
     super(props);
+    var index = this.props.match.params.sheet.split('-')[1];
     this.state  = {
-      sheet: this.props.data.elements
+      sheet: this.props.data[index].elements
     }
+  }
+
+  componentDidMount() {
+    var index = window.location.hash.split('-')[1];
+    this.setState({
+      sheet: this.props.data[index].elements
+    })
   }
 
   getColumnSearchProps = dataIndex => ({
@@ -126,7 +134,7 @@ class Sheet extends React.Component  {
         dataIndex: 'img',
       },
     ];
-    return <Table columns={columns} dataSource={this.state.sheet}/>
+    return <Table columns={columns} dataSource={this.state.sheet} rowKey={(record) => record.part_name + record.kit_name}/>
   }
 }
 
