@@ -36,7 +36,7 @@ class App extends React.Component  {
               <a href="#/dir" style={{color: 'gold'}}>All Kits</a>
             </Menu.Item>
             <Menu.Item>
-              <a href="#/sheet-0" style={{color: 'gold'}}>All Parts</a>
+              <a href="#/sheets/sheet-0" style={{color: 'gold'}}>All Parts</a>
             </Menu.Item>
           </Menu>
         </Header>
@@ -53,7 +53,7 @@ class App extends React.Component  {
             <Route path="/dir">
               <MenuSheet data={this.state.sheets.directory}/>
             </Route>
-            <Route path="/:sheet">
+            <Route path="/sheets/:sheet">
               <Sheet data={this.state.sheets} key={window.location.hash}/>
             </Route>
           </Switch>

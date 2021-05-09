@@ -105,23 +105,25 @@ class Sheet extends React.Component  {
       {
         title: 'Part Name',
         dataIndex: 'part_name',
-        width: '20%',
+        width: '15%',
         ...this.getColumnSearchProps('part_name'),
       },
       {
         title: 'Kit Name',
         dataIndex: 'kit_name',
-        width: '20%',
+        width: '10%',
         ...this.getColumnSearchProps('kit_name'),
       },
       {
         title: 'Available',
         dataIndex: 'available',
+        width: '2%',
         sorter: (a, b) => a.stock - b.stock,
       },
       {
         title: 'Stock',
         dataIndex: 'stock',
+        width: '2%',
         sorter: (a, b) => a.stock - b.stock,
       },
       {
@@ -132,6 +134,7 @@ class Sheet extends React.Component  {
       {
         title: 'Image',
         dataIndex: 'img',
+        width: '15%',
       },
     ];
     return <Table columns={columns} dataSource={this.state.sheet} rowKey={(record) => record.part_name + record.kit_name}/>
