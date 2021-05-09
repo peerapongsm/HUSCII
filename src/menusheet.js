@@ -107,6 +107,7 @@ export default class MenuSheet extends React.Component  {
       {
         title: 'Content',
         dataIndex: 'content',
+        ...this.getColumnSearchProps('content'),
       },
     ];
     return <Table columns={columns} dataSource={this.state.sheet} rowKey={record => record.Kit_name}

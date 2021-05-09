@@ -46,7 +46,7 @@ class App extends React.Component  {
                   <>
                     <div style={{textAlign: 'center', marginTop: '20vh', marginBottom: '40vh', fontSize: '28pt'}}>
                       <h1 style={{fontSize: '34pt'}}>Welcome to Electrical and Computer Engineering (ECE) Inventory!!</h1>
-                      <p>Choose <a href="#/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
+                      <p>Choose <a href="#/sheets/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
                     </div>
                   </>
             </Route>
