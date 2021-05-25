@@ -4,6 +4,7 @@ import Tabletop from 'tabletop';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import Sheet from './sheet';
 import MenuSheet from './menusheet';
+import WireSheet from './wiresheet';
 import './App.css';
 
 const { Header, Content, Footer } = Layout;
@@ -38,6 +39,9 @@ class App extends React.Component  {
             <Menu.Item>
               <a href="#/sheets/sheet-0" style={{color: 'gold'}}>All Parts</a>
             </Menu.Item>
+            <Menu.Item>
+              <a href="#/wire" style={{color: 'gold'}}>Wires</a>
+            </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ marginTop: '5vh', height:'auto',padding: '0 50px' }}>
@@ -52,6 +56,9 @@ class App extends React.Component  {
             </Route>
             <Route path="/dir">
               <MenuSheet data={this.state.sheets.directory}/>
+            </Route>
+            <Route path="/wire">
+              <WireSheet data={this.state.sheets.wire}/>
             </Route>
             <Route path="/sheets/:sheet">
               <Sheet data={this.state.sheets} key={window.location.hash}/>
