@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/HUSCII/static/css/main.0abf7b3c.chunk.css",
-    "main.js": "/HUSCII/static/js/main.699a4b20.chunk.js",
-    "main.js.map": "/HUSCII/static/js/main.699a4b20.chunk.js.map",
+    "main.js": "/HUSCII/static/js/main.4e0f1f8c.chunk.js",
+    "main.js.map": "/HUSCII/static/js/main.4e0f1f8c.chunk.js.map",
     "runtime-main.js": "/HUSCII/static/js/runtime-main.4d8a3412.js",
     "runtime-main.js.map": "/HUSCII/static/js/runtime-main.4d8a3412.js.map",
     "static/css/2.c51d807b.chunk.css": "/HUSCII/static/css/2.c51d807b.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.c51d807b.chunk.css",
     "static/js/2.8e60ad07.chunk.js",
     "static/css/main.0abf7b3c.chunk.css",
-    "static/js/main.699a4b20.chunk.js"
+    "static/js/main.4e0f1f8c.chunk.js"
   ]
 }
