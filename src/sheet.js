@@ -15,13 +15,6 @@ class Sheet extends React.Component  {
     }
   }
 
-  componentDidMount() {
-    var index = window.location.hash.split('-')[1];
-    this.setState({
-      sheet: this.props.data[index].elements
-    })
-  }
-
   getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
       <div style={{ padding: 8 }}>

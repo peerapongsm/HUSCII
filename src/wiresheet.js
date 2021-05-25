@@ -96,7 +96,7 @@ export default class WireSheet extends React.Component  {
       {
         title: 'Wire name',
         dataIndex: 'wire_name',
-        width: '20%',
+        width: '15%',
         ...this.getColumnSearchProps('wire_name'),
       },
       {
@@ -108,19 +108,24 @@ export default class WireSheet extends React.Component  {
       {
         title: 'Available',
         dataIndex: 'available',
-        width: '5%',
+        width: '2%',
         sorter: (a, b) => a.stock - b.stock,
       },
       {
         title: 'Stock',
         dataIndex: 'stock',
-        width: '5%',
+        width: '2%',
         sorter: (a, b) => a.stock - b.stock,
       },
       {
         title: 'Description',
         dataIndex: 'description',
         ...this.getColumnSearchProps('description'),
+      },
+      {
+        title: 'Image',
+        dataIndex: 'img',
+        width: '15%',
       },
     ];
     return <Table columns={columns} dataSource={this.state.sheet} rowKey={record => record.wire_name + "/" + record.kit_name}/>;
