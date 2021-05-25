@@ -102,18 +102,19 @@ export default class WireSheet extends React.Component  {
       {
         title: 'Kit name',
         dataIndex: 'kit_name',
+        width: '10%',
         ...this.getColumnSearchProps('kit_name'),
       },
       {
         title: 'Available',
         dataIndex: 'available',
-        width: '2%',
+        width: '5%',
         sorter: (a, b) => a.stock - b.stock,
       },
       {
         title: 'Stock',
         dataIndex: 'stock',
-        width: '2%',
+        width: '5%',
         sorter: (a, b) => a.stock - b.stock,
       },
       {
