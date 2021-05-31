@@ -9,10 +9,17 @@ class Sheet extends React.Component  {
 
   constructor(props) {
     super(props);
-    var index = this.props.match.params.sheet.split('-')[1];
-    this.state  = {
-      sheet: this.props.data[index].elements
+    if (typeof this.props.id === 'undefined') {
+      var index = this.props.match.params.sheet.split('-')[1];
+      this.state  = {
+        sheet: this.props.data[index].elements
+      }
+    } else {
+      this.state  = {
+        sheet: this.props.data[0].elements.filter(part => part["part_name"].toLowerCase().includes(this.props.id))
+      }
     }
+    console.log(this.state.sheet)
   }
 
   getColumnSearchProps = dataIndex => ({
@@ -130,7 +137,7 @@ class Sheet extends React.Component  {
         width: '15%',
       },
     ];
-    return <Table columns={columns} dataSource={this.state.sheet} rowKey={(record) => record.part_name + record.kit_name}/>
+    return <Table columns={columns} dataSource={this.state.sheet}/>
   }
 }
 

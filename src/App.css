@@ -1,7 +1,24 @@
 @import '~antd/dist/antd.css';
 
 body {
-  background-color: #CBC3E3;
+  background-color: #52057b;
+}
+
+.ant-table-thead > tr >th{
+  color: white;
+  background: #892cdc !important;
+}
+
+.ant-table-tbody {
+  color: white;
+  background: #bc6ff1 !important;
+}
+
+.ant-table-thead>tr.ant-table-row-hover:not(.ant-table-expanded-row)>td,
+.ant-table-tbody>tr.ant-table-row-hover:not(.ant-table-expanded-row)>td,
+.ant-table-thead>tr:hover:not(.ant-table-expanded-row)>td,
+.ant-table-tbody>tr:hover:not(.ant-table-expanded-row)>td {
+    background: #52057b;
 }
 
 .App {

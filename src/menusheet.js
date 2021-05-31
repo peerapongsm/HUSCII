@@ -97,20 +97,21 @@ export default class MenuSheet extends React.Component  {
         title: 'Kit name',
         dataIndex: 'Kit_name',
         width: '20%',
-        ...this.getColumnSearchProps('Kit_name'),
+        ...this.getColumnSearchProps('Kit_name')
       },
       {
         title: 'Description',
         dataIndex: 'description',
-        ...this.getColumnSearchProps('description'),
+        ...this.getColumnSearchProps('description')
       },
       {
         title: 'Content',
         dataIndex: 'content',
-        ...this.getColumnSearchProps('content'),
+        ...this.getColumnSearchProps('content')
       },
     ];
-    return <Table columns={columns} dataSource={this.state.sheet} rowKey={record => record.Kit_name}
+    return <Table
+    columns={columns} dataSource={this.state.sheet}
     onRow={(record, rowIndex) => {
       return {
         onClick: event => {window.location.href = "#/sheets/sheet-" + (rowIndex+1)}

@@ -4,7 +4,6 @@ import Tabletop from 'tabletop';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import Sheet from './sheet';
 import MenuSheet from './menusheet';
-import WireSheet from './wiresheet';
 import './App.css';
 
 const { Header, Content, Footer } = Layout;
@@ -30,9 +29,9 @@ class App extends React.Component  {
   render() {
     return (
       <Layout className="layout">
-        <Header style={{backgroundColor: '#5E22A9', display: 'flex'}}>
+        <Header style={{backgroundColor: '#52057b', display: 'flex'}}>
           <h1 style={{color: 'gold', marginRight: '1vw'}}>ECE Inventory</h1>
-          <Menu theme="dark" mode="horizontal" style={{backgroundColor: '#5E22A9'}}>
+          <Menu theme="dark" mode="horizontal" style={{backgroundColor: '#52057b'}}>
             <Menu.Item>
               <a href="#/dir" style={{color: 'gold'}}>All Kits</a>
             </Menu.Item>
@@ -42,15 +41,24 @@ class App extends React.Component  {
             <Menu.Item>
               <a href="#/wire" style={{color: 'gold'}}>Wires</a>
             </Menu.Item>
+            <Menu.Item>
+              <a href="#/gauge" style={{color: 'gold'}}>Gauges</a>
+            </Menu.Item>
+            <Menu.Item>
+              <a href="#/circuit" style={{color: 'gold'}}>Circuits</a>
+            </Menu.Item>
+            <Menu.Item>
+              <a href="#/resistor" style={{color: 'gold'}}>Resistors</a>
+            </Menu.Item>
           </Menu>
         </Header>
-        <Content style={{ marginTop: '5vh', height:'auto',padding: '0 50px' }}>
+        <Content style={{height:'auto',padding: '0 50px', paddingTop: '5vh', paddingBottom: '3vh', backgroundColor: 'black' }}>
           <Switch>
             <Route exact path="/">
                   <>
                     <div style={{textAlign: 'center', marginTop: '20vh', marginBottom: '40vh', fontSize: '28pt'}}>
-                      <h1 style={{fontSize: '34pt'}}>Welcome to Electrical and Computer Engineering (ECE) Inventory!!</h1>
-                      <p>Choose <a href="#/sheets/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
+                      <h1 style={{fontSize: '34pt', color: 'white'}}>Welcome to Electrical and Computer Engineering (ECE) Inventory!!</h1>
+                      <p style={{color: 'white'}}>Choose <a href="#/sheets/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
                     </div>
                   </>
             </Route>
@@ -58,14 +66,23 @@ class App extends React.Component  {
               <MenuSheet data={this.state.sheets.directory}/>
             </Route>
             <Route path="/wire">
-              <WireSheet data={this.state.sheets.wire}/>
+              <Sheet data={this.state.sheets} id={"wire"} key={window.location.hash}/>
+            </Route>
+            <Route path="/gauge">
+              <Sheet data={this.state.sheets} id={"gauge"} key={window.location.hash}/>
+            </Route>
+            <Route path="/circuit">
+              <Sheet data={this.state.sheets} id={"circuit"} key={window.location.hash}/>
+            </Route>
+            <Route path="/resistor">
+              <Sheet data={this.state.sheets} id={"resistor"} key={window.location.hash}/>
             </Route>
             <Route path="/sheets/:sheet">
               <Sheet data={this.state.sheets} key={window.location.hash}/>
             </Route>
           </Switch>
         </Content>
-        <Footer style={{ textAlign: 'center', color: 'white', backgroundColor: '#CBC3E3'}}>ECE inventory ©2021 Created by HUSCII</Footer>
+        <Footer style={{ textAlign: 'center', color: 'white', backgroundColor: '#52057b'}}>ECE inventory ©2021 Created by HUSCII</Footer>
       </Layout>
     );
   }
