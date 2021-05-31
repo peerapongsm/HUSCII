@@ -52,13 +52,13 @@ class App extends React.Component  {
             </Menu.Item>
           </Menu>
         </Header>
-        <Content style={{height:'auto',padding: '0 50px', paddingTop: '5vh', paddingBottom: '3vh', backgroundColor: 'black' }}>
+        <Content style={{height:'auto',padding: '0 50px', paddingTop: '5vh', paddingBottom: '3vh'}}>
           <Switch>
             <Route exact path="/">
                   <>
                     <div style={{textAlign: 'center', marginTop: '20vh', marginBottom: '40vh', fontSize: '28pt'}}>
-                      <h1 style={{fontSize: '34pt', color: 'white'}}>Welcome to Electrical and Computer Engineering (ECE) Inventory!!</h1>
-                      <p style={{color: 'white'}}>Choose <a href="#/sheets/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
+                      <h1 style={{fontSize: '34pt'}}>Welcome to Electrical and Computer Engineering (ECE) Inventory!!</h1>
+                      <p>Choose <a href="#/sheets/sheet-0">All parts</a> to see all parts and <a href="#/dir">All kits</a> to see all kits</p>
                     </div>
                   </>
             </Route>
